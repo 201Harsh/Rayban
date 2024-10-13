@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #fff;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+.main {
+    height: 100%;
+    width: 100%;
+    background-color: #111;
+}
+
+.back {
+    height: 100vh;
+    width: 100%;
+}
+
+.back img {
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+}
+
+.top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.workarea {
+    height: 100%;
+    width: 80%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.nav {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav img {
+    height: 50px;
+    margin: 20px;
+}
+
+.nav a {
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 1vw;
+    margin: 0 10px;
+    pointer-events: all;
+}
+
+.nleft,
+.nright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero {
+    width: 100%;
+    max-width: 1920px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0%, -40%);
+
+}
+
+.heroleft {
+    min-width: 50%;
+}
+
+.btn {
+    width: 15vw;
+    height: 100px;
+    font-size: 4.7vw;
+    font-family: "kajiro";
+    font-weight: 100;
+    text-align: center;
+    background-color: #494949;
+    cursor: pointer;
+    transition: all 0.4s ease-in;
+    pointer-events: all;
+    text-transform: uppercase;
+}
+
+.elem {
+    height: 9vw;
+    position: relative;
+    overflow: hidden;
+}
+
+.elem h1:nth-child(1) {
+    top: 0;
+}
+
+.elem h1 {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    line-height: .9;
+    font-size: 10vw;
+    font-family: "kajiro";
+    font-weight: 100;
+}
+
+
+.heroright {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 17%;
+}
+
+.imgdiv {
+    height: 150px;
+    width: 100%;
+    margin-top: 15px;
+    background: url('https://images.unsplash.com/photo-1506863530036-1efeddceb993?q=80&w=1488&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    margin-bottom: 30px;
+    background-size: cover;
+}
+
+
+
+.heroright p {
+    font-size: 13px;
+    font-weight: 300;
+    text-align: right;
+}
+
+.heroright p:nth-child(3) {
+    margin-bottom: 42px;
+}
