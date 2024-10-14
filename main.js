@@ -34,35 +34,49 @@ Shery.imageEffect('.back', {
   gooey: true
 })
 
-var main = document.querySelector('.main')
+var img = document.querySelector('.imgdiv img')
+
+var top = document.querySelector('.top')
+
+images =[ 
+  "https://images.unsplash.com/photo-1506863530036-1efeddceb993?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBvcnRyYWl0fGVufDB8fDB8fHww",
+  "https://plus.unsplash.com/premium_photo-1688350808212-4e6908a03925?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHBvcnRyYWl0fGVufDB8fDB8fHww",
+  "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fHBvcnRyYWl0fGVufDB8fDB8fHww",
+  "https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzZ8fHBvcnRyYWl0fGVufDB8fDB8fHww",
+  "https://plus.unsplash.com/premium_photo-1683133947766-40b4c2e4f314?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nzd8fHBvcnRyYWl0fGVufDB8fDB8fHww"
+];
 
 var elems = document.querySelectorAll('.elem')
 
 elems.forEach(function (ele) {
   var h1 = ele.querySelectorAll('h1')
   var index = 0
-  var animating = false;
+  var currentIndex = 0;
+  var animating = false
 
-  main.addEventListener('click', function () {
-    if(!animating){
-        animating = true;
-        gsap.to(h1[index], {
-            top: '-=100%',
-            duration: 1,
-            ease: 'expo.out',
-            onComplete: function () {
-              gsap.set(this._targets[0], { top: '100%' });
-              animating = false;
-            }
-          });
-      
-          index === h1.length-1 ? (index=0) : index++;
-      
-          gsap.to(h1[index], {
-            top: '-=100%',
-            duration: 1,
-            ease: 'expo.out'
-          });
+  top.addEventListener('click', function () {
+    if (!animating) {
+      animating = true
+      img.src = images[currentIndex];
+      gsap.to(h1[index], {
+        top: '-=100%',
+        duration: 1,
+        ease: 'expo.Inout',
+        onComplete: function () {
+          gsap.set(this._targets[0], { top: '100%' })
+          animating = false
+        }
+      })
+
+      index === h1.length - 1 ? (index = 0) : index++;
+      currentIndex = (currentIndex + 1) % images.length;
+          
+
+      gsap.to(h1[index], {
+        top: '-=100%',
+        duration: 1,
+        ease: 'expo.Inout'
+      })
     }
   });
 });
