@@ -133,6 +133,7 @@ body {
 .imgdiv {
     height: 200px;
     margin-bottom: 30px;
+    margin-top: 12px;
     width: 100%;
 }
 
